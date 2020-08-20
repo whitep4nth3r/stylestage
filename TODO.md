@@ -20,13 +20,12 @@ What do we need to include?
 - windows 95 style buttons - GREY
 - NOW! 2.0!
 - mixing font colours + styles on the same lines
-- green text on black background
 - IMITATE WORDART
-- Comic sans? / Drama sans?
 - recreate marquee with css keyframes (copy the css from when you google 'marquee')
 <marquee>Here i am</marquee>
 - FIRE
 - view counter
+- UNICORNS
 
 
 Things we've learned today

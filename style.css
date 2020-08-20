@@ -12,6 +12,64 @@
   --font-family-main: "Times New Roman", serif;
 }
 
+@keyframes flashingGithubLink {
+  0% {
+    color: var(--green);
+  }
+  20% {
+    color: var(--magenta);
+  }
+  40% {
+    color: var(--blue);
+  }
+  60% {
+    color: var(--red);
+  }
+  80% {
+    fill: var(--cyan);
+  }
+  100% {
+    fill: var(--yellow);
+  }
+}
+
+@keyframes starBlink {
+  0% {
+    fill: var(--green);
+    filter: drop-shadow(0rem 0.5rem 0 var(--magenta));
+  }
+  10% {
+    filter: drop-shadow(0rem 0.5rem 0 var(--yellow));
+  }
+  20% {
+    fill: var(--magenta);
+  }
+  30% {
+    filter: drop-shadow(0rem 0.5rem 0 var(--red));
+  }
+  40% {
+    fill: var(--blue);
+  }
+  50% {
+    filter: drop-shadow(0rem 0.5rem 0 var(--cyan));
+  }
+  60% {
+    fill: var(--red);
+  }
+  70% {
+    filter: drop-shadow(0rem 0.5rem 0 var(--green));
+  }
+  80% {
+    fill: var(--cyan);
+  }
+  90% {
+    filter: drop-shadow(0rem 0.5rem 0 var(--blue));
+  }
+  100% {
+    fill: var(--yellow);
+  }
+}
+
 body {
   font-family: var(--font-family-main);
   color: var(--body-font-color);
@@ -101,6 +159,7 @@ header .container p {
 }
 
 .link-github {
+  animation: flashingGithubLink 0.75s infinite;
   cursor: pointer;
   color: var(--green);
   margin-left: auto;
@@ -110,15 +169,18 @@ header .container p {
   justify-self: center;
   text-align: center;
   margin-top: 4rem;
+  font-size: 2rem;
   font-family: var(--font-family-heading);
 }
 
 /* todo - make star move */
 .link-github span svg {
-  height: 44px;
-  width: 44px;
+  animation: starBlink 0.75s infinite;
+  height: 6rem;
+  width: 6rem;
   fill: currentColor;
   margin-bottom: 1rem;
+  filter: drop-shadow(0rem 0.5rem 0 var(--yellow));
 }
 
 nav ul {

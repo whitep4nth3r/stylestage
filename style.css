@@ -93,6 +93,24 @@
   }
 }
 
+@keyframes headerCycle {
+  0% {
+    color: #ff0099;
+  }
+  25% {
+    color: #9900cc;
+  }
+  50% {
+    color: #9933ff;
+  }
+  75% {
+    color: #ff00ff;
+  }
+  100% {
+    color: #ff66ff;
+  }
+}
+
 html {
   background-image: var(--stars);
   background-repeat: repeat;
@@ -169,6 +187,8 @@ h1 {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  color: var(--magenta);
+  animation: headerCycle 0.25s infinite;
 }
 
 h1:before {

@@ -131,7 +131,7 @@ body {
 
 @media screen and (min-width: 769px) {
   body {
-    padding: 32px;
+    padding: 0 32px;
   }
 }
 
@@ -330,11 +330,11 @@ nav ul li a {
 
 blockquote {
   animation: blockquoteBorder 2s infinite;
+  border: 0.5rem solid var(--magenta);
   background-color: var(--green);
   padding: 2rem;
   margin-inline-start: 0;
   margin-inline-end: 0;
-  border: 0.5rem solid var(--magenta);
 }
 
 .container section blockquote p {
@@ -488,13 +488,17 @@ blockquote {
   justify-content: space-around;
   flex-wrap: wrap;
   margin: 4rem auto 4rem auto;
-  padding: 0;
+  padding: 2rem;
+  background-color: var(--yellow);
+  animation: blockquoteBorder 2s infinite;
+  border: 0.5rem solid var(--magenta);
 }
 
 #files .container h3 {
   display: flex;
   flex-direction: column;
   width: 100%;
+  margin-top: 0;
 }
 
 #files .container a {
@@ -538,5 +542,91 @@ aside.profile h4 {
   color: var(--cyan);
 }
 
-#profile ul li {
+.page-footer {
+  background-color: var(--blue);
+  margin: 4rem -2rem 0 -2rem;
+  padding: 2rem;
+}
+
+.page-footer p {
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 2rem;
+}
+
+.page-footer p a {
+  color: var(--yellow);
+  border-color: var(--green);
+  font-weight: bold;
+  font-family: var(--font-family-heading);
+}
+
+.page-footer .link-github svg {
+  height: 3rem;
+  width: 3rem;
+  animation: unset;
+  margin-bottom: 0;
+  margin-right: 0.5rem;
+  filter: drop-shadow(0rem 0.2rem 0 var(--magenta));
+}
+
+.page-footer .link-github {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  animation: unset;
+}
+
+.page-footer ul {
+  display: flex;
+  list-style: none;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin: 2rem auto 2rem auto;
+  padding: 0;
+}
+
+@media screen and (min-width: 769px) {
+  .page-footer ul {
+    height: 10rem;
+  }
+}
+
+.page-footer ul li {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  height: 100%;
+}
+
+.page-footer ul li a {
+  color: var(--black);
+  font-family: var(--font-family-heading);
+  padding: 2rem 1rem;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin: 0;
+  background-color: var(--yellow);
+  box-shadow: 0.4rem 0.4rem 1px 0 inset var(--grey-dark),
+    -0.4rem -0.4rem 1px 0 inset var(--grey-darker);
+  border: 0.5rem double var(--grey-darker);
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media screen and (min-width: 769px) {
+  .page-footer ul li {
+    width: 25%;
+  }
+}
+
+.page-footer ul li a:hover {
+  cursor: pointer;
+  box-shadow: 0.4rem 0.4rem 1px 0 inset var(--grey-darker),
+    -0.4rem -0.4rem 1px 0 inset var(--grey-dark);
+  color: var(--red);
 }

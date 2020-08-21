@@ -260,11 +260,12 @@ header .container p {
   justify-self: center;
   text-align: center;
   margin-top: 4rem;
+  scroll-margin-bottom: 4rem;
   font-size: 2rem;
   font-family: var(--font-family-heading);
 }
 
-.link-github span svg {
+.link-github svg {
   animation: starBlink 0.75s infinite;
   height: 6rem;
   width: 6rem;
@@ -322,7 +323,7 @@ nav ul li a {
   color: var(--white);
   font-weight: bold;
   font-family: var(--font-family-button);
-  font-size: 1.8rem;
+  font-size: 1.4rem;
   padding: 1rem;
   text-align: center;
 }
@@ -372,6 +373,41 @@ blockquote {
   display: block;
   margin-top: 4rem;
   margin-bottom: 4rem;
+}
+
+@keyframes wobbleFire {
+  0% {
+    transform: rotate(-5deg);
+    opacity: 0.5;
+  }
+  50% {
+    transform: rotate(0);
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(5deg);
+    opacity: 0.75;
+  }
+}
+
+#about ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+}
+
+#about ul li {
+  font-family: var(--font-family-heading);
+  font-size: 1.6rem;
+  margin-bottom: 2rem;
+}
+
+#about ul li:before {
+  content: "🔥";
+  display: inline-block;
+  animation: wobbleFire 0.5s infinite;
+  margin-right: 1rem;
 }
 
 #about .container:first-of-type h2 {
@@ -467,8 +503,9 @@ blockquote {
   color: var(--black);
   width: 80%;
   font-family: var(--font-family-button);
-  padding: 2rem;
+  padding: 2rem 1rem;
   text-align: center;
+  font-weight: bold;
   font-size: 1.4rem;
   background-color: var(--green);
   box-shadow: 0.4rem 0.4rem 1px 0 inset var(--grey-dark),
@@ -487,4 +524,19 @@ blockquote {
   box-shadow: 0.4rem 0.4rem 1px 0 inset var(--grey-darker),
     -0.4rem -0.4rem 1px 0 inset var(--grey-dark);
   color: var(--red);
+}
+
+aside.profile h4 {
+  font-size: 2rem;
+  text-align: center;
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: var(--cyan);
+}
+
+#profile ul li {
 }

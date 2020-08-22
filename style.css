@@ -9,6 +9,7 @@
   --yellow: #ffff00;
   --cyan: #00ffff;
   --magenta: #ff00ff;
+  --orange: #ff9900;
   --grey: #c0c0c0;
   --grey-dark: #7b7b7b;
   --grey-darker: #333333;
@@ -40,10 +41,10 @@
     color: var(--magenta);
   }
   40% {
-    color: var(--blue);
+    color: var(--white);
   }
   60% {
-    color: var(--red);
+    color: var(--orange);
   }
   80% {
     fill: var(--cyan);
@@ -108,12 +109,30 @@
   }
 }
 
+@keyframes styleStageCycle {
+  0% {
+    color: #ff0099;
+  }
+  25% {
+    color: var(--yellow);
+  }
+  50% {
+    color: var(--orange);
+  }
+  75% {
+    color: var(--green);
+  }
+  100% {
+    color: var(--cyan);
+  }
+}
+
 @keyframes headerCycle {
   0% {
     color: #ff0099;
   }
   25% {
-    color: #9900cc;
+    color: var(--blue);
   }
   50% {
     color: #9933ff;
@@ -122,7 +141,7 @@
     color: #ff00ff;
   }
   100% {
-    color: #ff66ff;
+    color: var(--black);
   }
 }
 
@@ -204,7 +223,7 @@ h1 {
   align-items: center;
   flex-direction: column;
   color: var(--magenta);
-  animation: headerCycle 0.25s infinite;
+  animation: styleStageCycle 0.25s infinite;
   margin: 0;
   font-family: var(--font-family-heading);
 }
@@ -341,7 +360,6 @@ blockquote {
   align-items: center;
   flex-direction: column;
   color: var(--magenta);
-  animation: headerCycle 0.25s infinite;
 }
 
 #files .container h3 {
@@ -349,6 +367,8 @@ blockquote {
   flex-direction: column;
   width: 100%;
   margin-top: 0;
+  color: var(--blue);
+  letter-spacing: 0.5rem;
 }
 
 #profile-title {
@@ -708,16 +728,20 @@ aside.profile .container > a {
 
 #styles ul {
   list-style: square inside var(--globe);
-  padding-inline-start: 5rem;
+  padding-inline-start: 1rem;
   text-align: left;
   max-width: 769px;
   margin-left: auto;
   margin-right: auto;
 }
 
+#styles ul li span span {
+  display: block;
+}
+
 #styles ul li {
   font-size: 1.4rem;
-  line-height: 8rem;
+  line-height: 3rem;
   font-family: var(--font-family-heading);
 }
 
@@ -727,6 +751,19 @@ aside.profile .container > a {
   font-family: var(--font-family-main);
 }
 
+@media screen and (min-width: 769px) {
+  #styles ul {
+    padding-inline-start: 5rem;
+  }
+
+  #styles ul li {
+    line-height: 8rem;
+  }
+
+  #styles ul li span span {
+    display: inline;
+  }
+}
 /* End currently staged style */
 
 .page-footer ul {
@@ -734,7 +771,7 @@ aside.profile .container > a {
   list-style: none;
   justify-content: space-around;
   flex-wrap: wrap;
-  margin: 2rem auto 2rem auto;
+  margin: 4rem auto 4rem auto;
   padding: 0;
 }
 
@@ -799,5 +836,5 @@ aside.profile .container > a {
 .page-footer {
   background-color: var(--blue);
   margin: 4rem -2rem 0 -2rem;
-  padding: 2rem;
+  padding: 4rem;
 }

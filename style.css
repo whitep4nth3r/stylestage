@@ -35,6 +35,16 @@
 }
 
 /* Animations */
+
+@keyframes marquee {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
 @keyframes flashingGithubLink {
   0% {
     color: var(--green);
@@ -513,6 +523,7 @@ header {
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
+  overflow: hidden;
 }
 
 #styles .container {
@@ -670,6 +681,19 @@ blockquote {
 
 #about .container:first-of-type h2 {
   color: var(--yellow);
+  margin-top: 0;
+}
+
+#about .container:first-of-type h2:before {
+  content: "GEOCITIES was built live on Twitch by whitep4nth3r | GEOCITIES was built live on Twitch by whitep4nth3r | GEOCITIES was built live on Twitch by whitep4nth3r";
+  font-family: var(--font-family-button);
+  color: var(--cyan);
+  font-size: 2rem;
+  display: block;
+  margin-bottom: 2rem;
+  white-space: nowrap;
+  transform: translateX(100%);
+  animation: marquee 30s infinite;
 }
 
 #about .container:last-of-type h2 {
